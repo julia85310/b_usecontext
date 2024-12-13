@@ -1,5 +1,5 @@
 'use client';
-import ThemeContext from "./Ejercicio1Contexto";
+import ThemeContext from "./Ejercicio1";
 import { useContext } from "react";
 
 
