@@ -4,6 +4,8 @@ import { ThemeProvider } from "./Ejercicio1";
 import { AuthProvider } from './Ejercicio2';
 import { LanguageProvider } from "./Ejercicio3";
 import {CartProvider} from './Ejercicio4';
+import { PermissionsProvider } from "./Ejercicio5";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -27,7 +29,9 @@ export default function RootLayout({ children }) {
           <AuthProvider>
             <LanguageProvider>
               <CartProvider>
+                <PermissionsProvider>
                 {children}
+                </PermissionsProvider>
               </CartProvider>
             </LanguageProvider>
           </AuthProvider>

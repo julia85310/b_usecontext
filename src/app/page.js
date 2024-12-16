@@ -5,6 +5,7 @@ import AuthContext from './Ejercicio2';
 import LanguageContext from "./Ejercicio3";
 import Cart from './Cart';
 import ProductList from "./ProductList";
+import AdminPanel from "./AdminPanel";
 
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -42,11 +43,14 @@ export default function Home() {
       </button>
 
       <br></br><h1>Ejercicio 4</h1><br></br>
-      
+
       <ProductList></ProductList>
       <Cart></Cart>
 
       <br></br><h1>Ejercicio 5</h1><br></br>
+
+      <AdminPanel></AdminPanel>
+      
       <br></br><h1>Ejercicio 6</h1><br></br>
       <br></br><h1>Ejercicio 7</h1><br></br>
       <br></br><h1>Ejercicio 8</h1>
