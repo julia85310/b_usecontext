@@ -6,6 +6,7 @@ import LanguageContext from "./Ejercicio3";
 import Cart from './Cart';
 import ProductList from "./ProductList";
 import AdminPanel from "./AdminPanel";
+import NotificationList from "./NotificationList";
 
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
@@ -50,8 +51,11 @@ export default function Home() {
       <br></br><h1>Ejercicio 5</h1><br></br>
 
       <AdminPanel></AdminPanel>
-      
+
       <br></br><h1>Ejercicio 6</h1><br></br>
+
+      <NotificationList></NotificationList>
+
       <br></br><h1>Ejercicio 7</h1><br></br>
       <br></br><h1>Ejercicio 8</h1>
     </div>

@@ -1,5 +1,6 @@
 'use client';
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
+import NotificationContext from './Ejercicio6';
 const CartContext = createContext();
 
 export default CartContext;
@@ -13,7 +14,7 @@ item = {
 
 
 export function CartProvider({children}){
-
+    const {addNotification} = useContext(NotificationContext);
     const [items, setItems] = useState([]);
 
     const addItem = (item) => {
@@ -32,6 +33,8 @@ export function CartProvider({children}){
         }else{
             setItems(newItems);
         }
+
+        addNotification(item.nombre + ' añadido al carrito');
     };
 
     const removeItem = (item) => {
@@ -52,6 +55,7 @@ export function CartProvider({children}){
             });
         }
         setItems(newItems);
+        addNotification(item.nombre + ' eliminado del carrito');
     };
 
     return (
