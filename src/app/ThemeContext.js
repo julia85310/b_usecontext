@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useState, useContext, useEffect } from "react";
-import SettingsContext from "./Ejercicio7";
+import SettingsContext from "./SettingsContext";
 const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {

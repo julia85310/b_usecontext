@@ -1,4 +1,4 @@
-import PermissionsContext from "./Ejercicio5";
+import PermissionsContext from "./PermissionsContext";
 import { useContext } from "react";
 
 export default function AdminPanel(){

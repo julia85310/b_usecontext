@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import NotificationContext from './Ejercicio6';
+import NotificationContext from './NotificationContext';
 
 export default function NotificationList(){
     const {notifications, removeNotification} = useContext(NotificationContext);

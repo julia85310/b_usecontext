@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import SettingsContext from "./Ejercicio7";
+import SettingsContext from "./SettingsContext";
 export default function Settings (){
     const {settings, updateSetting} = useContext(SettingsContext);
     const [inputNotifications, setInputNotifications] = useState(settings.notifications);

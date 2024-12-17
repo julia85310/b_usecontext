@@ -1,6 +1,6 @@
 'use client';
 import { createContext, useState, useContext } from "react";
-import NotificationContext from './Ejercicio6';
+import NotificationContext from './NotificationContext';
 const CartContext = createContext();
 
 export default CartContext;

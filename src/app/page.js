@@ -1,14 +1,14 @@
 'use client';
-import ThemeContext from "./Ejercicio1";
+import ThemeContext from "./ThemeContext";
 import { useContext, useState } from "react";
-import AuthContext from './Ejercicio2';
-import LanguageContext from "./Ejercicio3";
+import AuthContext from './AuthContext';
+import LanguageContext from "./LanguageContext";
 import Cart from './Cart';
 import ProductList from "./ProductList";
 import AdminPanel from "./AdminPanel";
 import NotificationList from "./NotificationList";
 import Settings from "./Settings";
-import SettingsContext from "./Ejercicio7";
+import SettingsContext from "./SettingsContext";
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const {user, login, logout} = useContext(AuthContext);

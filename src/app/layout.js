@@ -1,12 +1,12 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "./Ejercicio1";
-import { AuthProvider } from './Ejercicio2';
-import { LanguageProvider } from "./Ejercicio3";
-import {CartProvider} from './Ejercicio4';
-import { PermissionsProvider } from "./Ejercicio5";
-import { NotificationProvider } from "./Ejercicio6";
-import { SettingsProvider } from "./Ejercicio7";
+import { ThemeProvider } from "./ThemeContext";
+import { AuthProvider } from './AuthContext';
+import { LanguageProvider } from "./LanguageContext";
+import {CartProvider} from './CartContext';
+import { PermissionsProvider } from "./PermissionsContext";
+import { NotificationProvider } from "./NotificationContext";
+import { SettingsProvider } from "./SettingsContext";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

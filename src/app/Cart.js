@@ -1,4 +1,4 @@
-import CartContext from "./Ejercicio4";
+import CartContext from "./CartContext";
 import { useContext } from "react";
 export default function Cart(){
     const {items, removeItem} = useContext(CartContext);

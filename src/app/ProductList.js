@@ -1,4 +1,4 @@
-import CartContext from "./Ejercicio4";
+import CartContext from "./CartContext";
 import { useContext } from "react";
 
 const itemsStore = [
