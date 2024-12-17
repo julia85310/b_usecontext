@@ -7,17 +7,20 @@ import Cart from './Cart';
 import ProductList from "./ProductList";
 import AdminPanel from "./AdminPanel";
 import NotificationList from "./NotificationList";
-
+import Settings from "./Settings";
+import SettingsContext from "./Ejercicio7";
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const {user, login, logout} = useContext(AuthContext);
   const [userInput, setUserInput] = useState('');
   const { language, setLanguage} = useContext(LanguageContext);
-  
+  const {settings} = useContext(SettingsContext);
+
   
   return (
-    <div style={{ backgroundColor: theme === "light" ? "#fff" : "#333", 
-    color: theme === "light" ? "#000" : "#fff", height: "100vh" }}>
+    <div style={{ 
+      backgroundColor: theme === "light" ? "#fff" : "#333", 
+      color: theme === "light" ? "#000" : "#fff"}}>
       
       <h1>Ejercicio 1</h1><br></br>
 
@@ -54,9 +57,12 @@ export default function Home() {
 
       <br></br><h1>Ejercicio 6</h1><br></br>
 
-      <NotificationList></NotificationList>
+      {settings.notifications && <NotificationList></NotificationList>}
 
       <br></br><h1>Ejercicio 7</h1><br></br>
+          
+      <Settings></Settings> 
+
       <br></br><h1>Ejercicio 8</h1>
     </div>
   );

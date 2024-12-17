@@ -3,6 +3,8 @@ import { createContext, useState} from "react";
 
 const SettingsContext = createContext();
 
+export default SettingsContext;
+
 export function SettingsProvider({children}){
 
     const [settings, setSettings] = useState({
@@ -10,14 +12,15 @@ export function SettingsProvider({children}){
     });
 
     function updateSetting(setting, valor){
+        console.log(`Updating setting ${setting} to ${valor}`);
         setSettings({...settings, 
-            setting: valor
+            [setting]: valor
         });
     }
 
     return (
         <SettingsContext.Provider value={{settings, updateSetting}}>
-        {children}
+            {children}
         </SettingsContext.Provider>
     );
 }
