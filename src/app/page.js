@@ -9,6 +9,7 @@ import AdminPanel from "./AdminPanel";
 import NotificationList from "./NotificationList";
 import Settings from "./Settings";
 import SettingsContext from "./SettingsContext";
+import LoadingButton from "./LoadingButton";
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const {user, login, logout} = useContext(AuthContext);
@@ -64,6 +65,8 @@ export default function Home() {
       <Settings></Settings> 
 
       <br></br><h1>Ejercicio 8</h1>
+
+      <LoadingButton></LoadingButton>
     </div>
   );
 }

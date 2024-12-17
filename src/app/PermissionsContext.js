@@ -1,5 +1,7 @@
 'use client';
-import {useState, createContext, useEffect} from 'react';
+import {useState, createContext, useEffect, useContext} from 'react';
+import LoadingContext from './LoadingContext';
+import Spinner from './Spinner';
 
 const PermissionsContext = createContext();
 
@@ -8,9 +10,10 @@ export default PermissionsContext;
 export function PermissionsProvider({children}){
 
     const [permissions, setPermissions] = useState({ admin: true, canEdit: false });
-
+    const {loading, startLoading, stopLoading} = useContext(LoadingContext);
  
     function fetchPermissions(){
+        startLoading();
         fetch('https://jsonplaceholder.typicode.com/posts')
             .then((response) => response.json())
             .then((data) => {
@@ -19,6 +22,9 @@ export function PermissionsProvider({children}){
             })
             .catch((error) => {
             console.error('Error al actualizar los permisos: ' + error);
+            })
+            .finally(() => {
+                stopLoading();  
             });
             
     }
@@ -28,7 +34,7 @@ export function PermissionsProvider({children}){
 
     return (
         <PermissionsContext.Provider value={{permissions, fetchPermissions}}>
-            {children}
+            {loading? <Spinner></Spinner>: children}
         </PermissionsContext.Provider>
     );
 }

@@ -1,13 +1,23 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import SettingsContext from "./SettingsContext";
+import ThemeContext from "./ThemeContext";
 export default function Settings (){
     const {settings, updateSetting} = useContext(SettingsContext);
     const [inputNotifications, setInputNotifications] = useState(settings.notifications);
     const [inputDarkMode, setInputDarkMode] = useState(settings.darkMode);
+    const {theme} = useContext(ThemeContext);
+
+    useEffect(() => {
+        if(theme == 'dark'){
+            setInputDarkMode(true);
+        }else{
+            setInputDarkMode(false);
+        }
+    }, [theme])
 
     return <div>
         <h2>Configuración</h2>
-        <input type="checkbox" value={inputNotifications} checked onChange={(e) => {
+        <input type="checkbox" value={inputNotifications} defaultChecked onChange={(e) => {
             setInputNotifications(e.target.checked);
             updateSetting('notifications', e.target.checked);
         }}></input>Notificaciones activadas <br></br>
