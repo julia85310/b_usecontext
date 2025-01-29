@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 export default function Spinner(){
   const [proceso, setProceso] = useState('');
 
-  /*
+  
   useEffect(() => {
     const timer1 = setTimeout(() => {
       setProceso(".");
@@ -22,9 +22,9 @@ export default function Spinner(){
       clearTimeout(timer2);
       clearTimeout(timer3);
     };
-  }, []);*/
+  }, []);
 
   return (
-    <div>{proceso}hola</div>
+    <div>Cargando{proceso}</div>
   );
 }

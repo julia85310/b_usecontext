@@ -13,14 +13,14 @@ export function ThemeProvider({ children }) {
   //Ej7
   useEffect( () =>{
     console.log('darkMode changed:');
-    if(settings.darkmode){
+    if(settings.darkMode){
       console.log(settings.darkMode);
       setTheme('dark');
     }else{
       console.log(settings.darkMode);
       setTheme('light');
     }
-  }, [settings.darkmode]);
+  }, [settings.darkMode]);
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>

@@ -7,10 +7,10 @@ export default function LoadingButton(){
     const {loading, startLoading, stopLoading} = useContext(LoadingContext);
 
     function carga(){
-        startLoading();/*
+        startLoading();
         setTimeout(() => {
             stopLoading();
-        }, 2000); */
+        }, 2000);
     }
 
     return (

@@ -10,6 +10,8 @@ import NotificationList from "./NotificationList";
 import Settings from "./Settings";
 import SettingsContext from "./SettingsContext";
 import LoadingButton from "./LoadingButton";
+import { LoadingProvider } from "./LoadingContext";
+
 export default function Home() {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const {user, login, logout} = useContext(AuthContext);
@@ -62,11 +64,12 @@ export default function Home() {
 
       <br></br><h1>Ejercicio 7</h1><br></br>
           
-      <Settings></Settings> 
+      <Settings></Settings> <br></br>
 
-      <br></br><h1>Ejercicio 8</h1>
-
-      <LoadingButton></LoadingButton>
+      <LoadingProvider>
+        <h1>Ejercicio 8</h1>
+        <LoadingButton></LoadingButton>
+      </LoadingProvider>
     </div>
   );
 }

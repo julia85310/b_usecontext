@@ -17,11 +17,11 @@ export default function Settings (){
 
     return <div>
         <h2>Configuración</h2>
-        <input type="checkbox" value={inputNotifications} defaultChecked onChange={(e) => {
+        <input type="checkbox" checked={inputNotifications} onChange={(e) => {
             setInputNotifications(e.target.checked);
             updateSetting('notifications', e.target.checked);
         }}></input>Notificaciones activadas <br></br>
-        <input type="checkbox" value={inputDarkMode} onChange={(e) => {
+        <input type="checkbox" checked={inputDarkMode} onChange={(e) => {
             setInputDarkMode(e.target.checked);
             updateSetting('darkMode', e.target.checked);
         }}></input>Modo Oscuro
